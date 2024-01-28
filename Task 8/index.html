@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketball Animation</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: url('https://source-of-your-basketball-court-image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            position: relative;
+            height: 100vh; /* Adjusted to cover the entire screen */
+            width: 100vw; /* Adjusted to cover the entire screen */
+            background-color: rgba(0, 102, 0, 0.7);
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .box {
+            height: 121px;
+            width: 121px;
+            background-color: #FF4500;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            animation: animateX 3s linear infinite, animateY 1s ease-out infinite alternate;
+        }
+        @keyframes animateX {
+            from {
+                left: 0;
+            }
+            to {
+                left: calc(100% - 121px); /* Adjusted to prevent overflow */
+            }
+        }
+        @keyframes animateY {
+            from {
+                bottom: 0;
+            }
+            to {
+                bottom: calc(100% - 121px); /* Adjusted to prevent overflow */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box"></div>
+    </div>
+</body>
+
+</html>
